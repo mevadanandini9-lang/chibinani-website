@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Nanichan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="login.html">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Baloo 2', cursive;
+      color: white;
+      background: #000;
+      overflow-x: hidden;
+    }
+
+    /* 🌸 Header */
+    header {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 11px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid #ffc0eb;
+      position: relative;
+      z-index: 5;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      border-radius: 15px;
+    }
+
+    header nav {
+      margin: 0 auto;
+      display: flex;
+      gap: 15px;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff85c1;
+    }
+
+
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+
+    .nav-links li {
+      margin-left: 30px;
+    }
+
+    .nav-links a {
+      color: #e044a4;
+      text-decoration: none;
+      font-size: 1.05rem;
+      padding: 5px 10px;
+      transition: color 0.3s, text-shadow 0.3s;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: #FFB6C1;
+      /* Light pink on hover */
+      /* Add a subtle highlight */
+      text-shadow: 0 0 8px #FFB6C1;
+      transform: scale(1.1);
+      transition: transform 0.3s ease;
+    }
+
+    .nav-links a:active {
+      transform: scale(0.9);
+      transition: transform 0.1s ease;
+    }
+
+    .nav-links a:focus {
+      outline: 2px solid #FFB6C1;
+      outline-offset: 2px;
+    }
+
+    /* 🎬 Background Video */
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      background-color: rgb(5, 5, 5);
+    }
+
+    /* 🌸 Hero Section */
+    .hero {
+      text-align: left;
+      position: relative;
+      top: 10%;
+      transform: translateY(20%);
+      padding: 50px;
+      margin-left: 12px;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    /* 🎬 Buttons */
+    btn-search {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 15px;
+      font-size: 1rem;
+      color: #fff;
+      background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+      gap: 10px;
+    }
+
+    .btn-search::placeholder {
+      color: #ffe4e1;
+      /* Light pink placeholder */
+    }
+
+    .btn-search:hover {
+      background: linear-gradient(90deg, #f57575, #ff8b8f);
+      transform: scale(1.05);
+    }
+
+    .btn-search:active {
+      transform: scale(0.95);
+    }
+
+    .btn-search:focus {
+      outline: 2px solid #FFB6C1;
+      outline-offset: 2px;
+    }
+
+
+    .btn-learn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      font-size: 1rem;
+      color: #fff;
+      background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .btn-learn:hover {
+      background: linear-gradient(90deg, #fa7d5b, #ff8b8f);
+      transform: scale(1.05);
+    }
+
+    .btn-watch {
+      padding: 10px 25px;
+      border: none;
+      border-radius: 20px;
+      font-size: 1rem;
+      color: #fff;
+      background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .btn-watch:hover {
+      background: linear-gradient(90deg, #fa7d5b, #ff8b8f);
+      transform: scale(1.05);
+    }
+
+    .btn-watch:active,
+    .btn-learn:active {
+      transform: scale(0.95);
+    }
+
+    .btn-watch:focus,
+    .btn-learn:focus {
+      outline: 2px solid #FFB6C1;
+      outline-offset: 2px;
+    }
+
+
+
+
+
+
+    /* 🌸 Carousel Section */
+    .feature {
+      margin: 60px 0;
+    }
+
+    .feature h4 {
+      font-size: 1.9rem;
+      margin-bottom: 15px;
+      text-align: left;
+      color: #ffffff;
+      padding-left: 60px;
+    }
+
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
+      padding: 20px 60px;
+    }
+
+    .carousel-item {
+      flex: 0 0 auto;
+      width: 200px;
+      background-color: #1c1c1c;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      scroll-snap-align: start;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .carousel-item:hover {
+      transform: scale(1.05);
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .anime-title {
+      padding: 10px;
+      text-align: center;
+    }
+
+    .anime-title h5 {
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+
+    .anime-title p {
+      font-size: 0.85rem;
+      color: #bbb;
+      text-align: center;
+    }
+
+    curousel-collection {
+      background-color: #121212;
+      /* Slightly different background */
+      padding-top: 40px;
+      padding-bottom: 60px;
+      margin-top: 40px;
+      /* Space from previous section */
+    }
+
+    curousel-collection h2 {
+      margin-left: 0;
+      /* Reset left margin from generic h2 */
+    }
+
+    .collections-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      /* Responsive grid */
+      gap: 30px;
+      padding: 0 60px;
+
+      /* Align with other sections */
+    }
+
+
+    .collection-card:hover {
+      transform: translateY(-5px) scale(1.01);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+    }
+
+    .collection-card img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: brightness(0.4);
+      /* Darken image */
+      z-index: 1;
+    }
+
+    .collection-card h3 {
+      position: relative;
+      z-index: 2;
+      font-size: 1.5rem;
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.664);
+      /* Slight background for text readability */
+      border-radius: 5px;
+    }
+
+
+
+    .collection-card {
+      background-color: #2b2b2b;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+      height: 250px;
+      /* Fixed height for collection cards */
+      display: flex;
+      /* To center text vertically */
+      align-items: center;
+      /* Center text vertically */
+      justify-content: center;
+      /* Center text horizontally */
+    }
+
+
+    .collection-card:hover {
+      transform: translateY(-5px) scale(1.01);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+    }
+
+
+    /* fetures */
+
+    .featured-collections {
+      background-color: #121212;
+      padding: 40px 60px;
+    }
+
+    .featured-collections h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #ccc5c9;
+      margin-bottom: 30px;
+    }
+
+    .collections-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .collection-card {
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s;
+    }
+
+    .collection-card:hover {
+      transform: translateY(-5px) scale(1.02);
+    }
+
+    .collection-card h3 {
+      margin-bottom: 15px;
+    }
+
+    .collection-images {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .collection-images img {
+      width: 80px;
+      height: 110px;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s;
+      position: relative;
+    }
+
+    /* Tilt effect */
+    .img-left {
+      transform: rotate(-8deg);
+      margin-right: -20px;
+      z-index: 1;
+    }
+
+    .img-center {
+      transform: rotate(0deg) scale(1.05);
+      z-index: 2;
+    }
+
+    .img-right {
+      transform: rotate(8deg);
+      margin-left: -20px;
+      z-index: 1;
+    }
+
+    /* Hover to pop images */
+    .collection-images img:hover {
+      transform: scale(1.15) !important;
+      z-index: 3;
+    }
+
+
+    /* trnding */
+
+
+    .Trending {
+      padding: 40px 60px;
+      background-color: #121212;
+    }
+
+    .Trending h2 {
+      font-size: 2rem;
+      color: #e7e4e6;
+      margin-bottom: 25px;
+    }
+
+    .Trending-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+
+    .header {
+      width: 100%;
+      /* Position fixed to stay at the top, or use relative/absolute */
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      /* Ensure it's above other elements */
+      padding: 10px 0;
+
+      /* GLASSMORPHISM EFFECT */
+      background: rgba(255, 255, 255, 0.2);
+      /* Very light, slightly transparent background */
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      /* The key for the 'frosted glass' effect */
+      -webkit-backdrop-filter: blur(10px);
+      /* For Safari support */
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      /* Subtle white border */
+    }
+
+
+
+
+
+    .anime-card {
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .anime-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
+    }
+
+    .anime-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-info {
+      padding: 10px;
+      text-align: left;
+    }
+
+    .card-info h3 {
+      font-size: 1rem;
+      margin-bottom: 5px;
+      color: white;
+    }
+
+    .card-info p {
+      font-size: 0.85rem;
+      color: #bbb;
+    }
+
+
+
+    /* popular section */
+
+    .most-popular-section {
+      padding: 40px 60px;
+      background-color: #121212;
+    }
+
+    .most-popular-section h3 {
+      font-size: 2rem;
+      color: #e7e4e6;
+      margin-bottom: 25px;
+    }
+
+    /* Fix: style the grid container */
+    .popular-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    /* Anime card styling */
+    .popular-grid .anime-card {
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s;
+    }
+
+    .popular-grid .anime-card:hover {
+      transform: translateY(-5px) scale(1.02);
+    }
+
+    .popular-grid .anime-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .popular-grid .anime-card h3 {
+      margin: 10px 0 5px;
+      font-size: 1rem;
+      color: #fff;
+    }
+
+    .popular-grid .anime-card p {
+      font-size: 0.85rem;
+      color: #bbb;
+      margin-bottom: 10px;
+    }
+
+
+    /* 🌸 Footer */
+    .footer {
+      background: #0f0f0f;
+      padding: 20px 60px;
+      border-top: 2px solid #2a2a2a;
+      color: #ccc;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-left h3 {
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+
+    .footer-left a {
+      color: #bbb;
+      text-decoration: none;
+      margin: 0 8px;
+      transition: color 0.3s;
+    }
+
+    .footer-left a:hover {
+      color: #ff4fa1;
+    }
+
+    /* Social icons */
+    .footer-right a {
+      margin-left: 12px;
+    }
+
+    .footer-right img {
+      width: 22px;
+      height: 22px;
+      filter: brightness(0.8);
+      transition: transform 0.3s, filter 0.3s;
+    }
+
+    .footer-right img:hover {
+      transform: scale(1.2);
+      filter: brightness(1);
+    }
+
+    /* --- DETAIL MODAL STYLES --- */
+
+    /* Modal Backdrop */
+    .modal {
+      display: none;
+      /* Crucial: Hidden by default */
+      position: fixed;
+      z-index: 2000;
+      /* Ensure it's above everything */
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow-y: scroll;
+      /* Allow scrolling for content */
+      background-color: #0d0d0d;
+      /* Very dark background */
+      padding: 20px 0;
+    }
+
+    /* Modal Content Box */
+    .modal-content {
+      background: #121212;
+      /* Main dark background for the box */
+      margin: 0 auto;
+      border-radius: 5px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+      width: 90%;
+      max-width: 1100px;
+      /* Max width control */
+      color: #fff;
+      position: relative;
+      animation: slideIn 0.3s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Close Button */
+    .close-button {
+      color: #ffb6c1;
+      /* Pink */
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      font-size: 40px;
+      cursor: pointer;
+      line-height: 1;
+      z-index: 200;
+      transition: color 0.3s;
+    }
+
+    .close-button:hover {
+      color: #ff1493;
+    }
+
+    /* Detail Container Padding */
+    .detail-container {
+      padding: 40px;
+    }
+
+    /* Top Section Layout */
+    .top-section {
+      display: flex;
+      gap: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #333;
+    }
+
+    .detail-poster {
+      width: 200px;
+      height: 300px;
+      border-radius: 8px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .summary-info {
+      flex-grow: 1;
+    }
+
+    .summary-info h1 {
+      color: #ffb6c1;
+      font-size: 2.5rem;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .summary-text {
+      color: #ccc;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* Stats Grid (2-column layout) */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px 20px;
+      margin-bottom: 20px;
+    }
+
+    .stats-grid p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .stats-grid strong {
+      color: #ccc;
+      font-weight: 600;
+    }
+
+    /* Genre Tags */
+    .genre-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 25px;
+    }
+
+    .genre-tags span {
+      background-color: #333;
+      color: #ffb6c1;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 0.85rem;
+    }
+
+    /* Rating Box */
+    .rating-box {
+      margin-bottom: 20px;
+    }
+
+    .rating-box p {
+      margin-bottom: 5px;
+    }
+
+    .rating-box .stars {
+      color: gold;
+      font-size: 1.5rem;
+    }
+
+    /* Action Buttons */
+    .action-buttons button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      margin-right: 15px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s, transform 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bookmark-btn {
+      background-color: #ff1493;
+      /* Deep Pink */
+      color: white;
+    }
+
+    .trailer-btn {
+      background-color: #444;
+      /* Dark gray */
+      color: white;
+    }
+
+    .action-buttons button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Seasons and Episodes Section */
+    .seasons-episodes-section {
+      padding-top: 30px;
+    }
+
+    .seasons-episodes-section h2 {
+      color: #ffb6c1;
+      font-size: 1.5rem;
+      border-bottom: 2px solid #333;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      padding-left: 0;
+      /* Override generic h4 padding */
+    }
+
+    /* Season Tabs */
+    .season-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .season-tabs button {
+      padding: 8px 15px;
+      background: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .season-tabs button.active {
+      background-color: #ff1493;
+      font-weight: bold;
+    }
+
+    /* Episode List */
+    .episode-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .episode-list button {
+      padding: 10px;
+      width: 40px;
+      height: 40px;
+      background: #333;
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .episode-list button:hover {
+      background-color: #ff1493;
+    }
+
+    /* Responsiveness for Top Section */
+    @media (max-width: 768px) {
+      .top-section {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .detail-poster {
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .summary-info h1 {
+        text-align: center;
+      }
+
+      .action-buttons {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🌸 Header -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="chibinini Logo">
+    </div>
+    <ul class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="#">Catalog</a>
+      <a href="#">News</a>
+      <a href="#">Collection</a>
+    </ul>
+
+    </nav>
+    <input type="text" class="btn-search" placeholder="Search...">
+
+    <button class="btn-learn" onclick="window.location.href='login.html'">Login In</button>
+
+    <button class="btn-watch">Get Started</button>
+
+
+  </header>
+
+  <!-- 🎥 Background Video -->
+  <video autoplay loop muted class="video-bg">
+    <source src="Demon Slayer - Gyomei In Action [8K](2).mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- 🌸 Hero Section -->
+  <section class="hero">
+    <h2>Welcome to NaniChan! 🌸</h2>
+    <p>Denji has a simple dream — to live a happy and peaceful life, spending time with a girl.</p>
+    <button class="btn-learn">📖 Learn More</button>
+    <button class="btn-watch">🎬 To Watch</button>
+  </section>
+
+
+
+
+
+
+  <!-- Carousel -->
+
+
+  <section class="feature">
+    <h4>🌸 Special for You 🌸</h4>
+    <div class="carousel">
+
+      <!-- items here -->
+
+      <div class="carousel-item">
+        <img src="images/vinland saga.jpg" alt="Vinland Saga">
+        <div class="anime-title">Vinland Saga</div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/86 Part 2.jpg" alt="86 Part 2">
+        <div class="anime-title">86 Part 2</div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/Code Geass.jpg" alt="Code Geass">
+        <div class="anime-title">Code Geass</div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/Jujutsu Kaisen.jpg" alt="Jujutsu Kaisen">
+        <div class="anime-title">Jujutsu Kaisen</div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/Your Lie in April.jpg" alt="Your Lie in April">
+        <div class="anime-title">Your Lie in April</div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/Death Note.jpg" alt="Death Note">
+        <div class="anime-title">Death Note</div>
+      </div>
+  </section>
+
+
+  <section class="featured-collections">
+    <h2>🌸 Featured Collections 🌸</h2>
+    <div class="collections-grid">
+
+      <!-- Card 1 -->
+      <div class="collection-card">
+        <h3>The Best Mystical Anime</h3>
+        <div class="collection-images">
+          <img src="images/feacture/erased.jpg" alt="Erased" class="img-left">
+          <img src="images/feacture/promised.jpg" alt="Promised Neverland" class="img-center">
+          <img src="images/feacture/another.jpg" alt="Another" class="img-right">
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="collection-card">
+        <h3>Top 20 Romance Anime</h3>
+        <div class="collection-images">
+          <img src="images/feacture/pet girl.jpg" alt="Romance 1" class="img-left">
+          <img src="images/feacture/promised.jpg" alt="Romance 2" class="img-center">
+          <img src="images/feacture/tonikawa.jpg" alt="Romance 3" class="img-right">
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="collection-card">
+        <h3>The Best suspence Anime</h3>
+        <div class="collection-images">
+          <img src="images/feacture/classroom of the elite.jpg" alt="Classic 1" class="img-left">
+          <img src="images/feacture/Duke's mission.jpg" alt="Classic 2" class="img-center">
+          <img src="images/feacture/Breeze.jpg" alt="Classic 3" class="img-right">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="Trending">
+    <h2> 🌸Trending Now 🌸</h2>
+    <div class="Trending-container">
+      <div class="anime-card">
+        <img src="images\feacture\spy family.jpg" alt="spy family">
+        <div class="card-info">
+          <h3>TV: Spy x Family</h3>
+          <p>2022, Comedy</p>
+        </div>
+      </div>
+
+
+      <div class="anime-card">
+        <img src="images/feacture/Mob Psycho 100 II.jpg" alt="Mob Psycho 100 II">
+        <div class="card-info">
+          <h3>Mob Psycho 100 II</h3>
+          <p>2022, Comedy</p>
+        </div>
+      </div>
+
+
+
+      <div class="anime-card">
+        <img src="images/feacture/solo leveling.jpg" alt="solo leveling">
+        <div class="card-info">
+          <h3>solo leveling</h3>
+          <p>2022, Comedy</p>
+        </div>
+      </div>
+
+
+
+
+      <div class="anime-card">
+        <img src="images/feacture/My Hero Academia.jpg" alt="My Hero Academia">
+        <div class="card-info">
+          <h3>My Hero Academia</h3>
+          <p>2022, Comedy</p>
+        </div>
+      </div>
+
+
+      <div class="anime-card">
+        <img src="images/feacture/Yofukashi no Uta.jpg" alt="Yofukashi no Uta">
+        <div class="card-info">
+          <h3>Yofukashi no Uta</h3>
+          <p>2022, Comedy</p>
+        </div>
+      </div>
+
+
+      <div class="anime-card">
+        <img src="images/feacture/tokyo ghoul.jpg" alt="tokyo ghoul">
+        <div class="card-info">
+          <h3>tokyo ghoul</h3>
+          <p>2022, Comedy</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="most-popular-section">
+    <h3>🌸 Most Popular 🌸</h3>
+    <div class="popular-grid">
+
+      <!-- Card 1 -->
+      <div class="anime-card">
+        <img src="images/feacture/attack on titans.jpg" alt="Attack on Titan">
+        <h3>Attack on Titan</h3>
+        <p>2013, Action</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="anime-card">
+        <img src="images/feacture/demon slayer.jpg" alt="Demon Slayer">
+        <h3>Demon Slayer</h3>
+        <p>2019, Action</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="anime-card">
+        <img src="images/feacture/jujutsu kaisen anime.jpg" alt="Jujutsu Kaisen">
+        <h3>Jujutsu Kaisen</h3>
+        <p>2020, Action</p>
+      </div>
+
+      <!-- card 4 -->
+      <div class="anime-card">
+        <img src="images/feacture/jujutsu kaisen anime.jpg" alt="Jujutsu Kaisen">
+        <h3>Jujutsu Kaisen</h3>
+        <p>2020, Action</p>
+      </div>
+
+      <!-- card 5 -->
+      <div class="anime-card">
+        <img src="images/feacture/jujutsu kaisen anime.jpg" alt="Jujutsu Kaisen">
+        <h3>Jujutsu Kaisen</h3>
+        <p>2020, Action</p>
+      </div>
+
+
+      <!-- card 6 -->
+      <div class="anime-card">
+        <img src="images/feacture/jujutsu kaisen anime.jpg" alt="Jujutsu Kaisen">
+        <h3>Jujutsu Kaisen</h3>
+        <p>2020, Action</p>
+      </div>
+
+      <!-- card 7 -->
+      <div class="anime-card">
+        <img src="images/feacture/jujutsu kaisen anime.jpg" alt="Jujutsu Kaisen">
+        <h3>Jujutsu Kaisen</h3>
+        <p>2020, Action</p>
+      </div>
+
+      <!-- card 8 -->
+      <div class="anime-card">
+        <img src="images/feacture/jujutsu kaisen anime.jpg" alt="Jujutsu Kaisen">
+        <h3>Jujutsu Kaisen</h3>
+        <p>2020, Action</p>
+      </div>
+
+      <!-- card 9 -->
+      <div class="anime-card">
+        <img src="images/feacture/jujutsu kaisen anime.jpg" alt="Jujutsu Kaisen">
+        <h3>Jujutsu Kaisen</h3>
+        <p>2020, Action</p>
+      </div>
+
+      <!-- card 10 -->
+      <div class="anime-card">
+        <img src="images/feacture/jujutsu kaisen anime.jpg" alt="Jujutsu Kaisen">
+        <h3>Jujutsu Kaisen</h3>
+        <p>2020, Action</p>
+      </div>
+
+
+      <!-- card 11 -->
+      <div class="anime-card">
+        <img src="images/feacture/jujutsu kaisen anime.jpg" alt="Jujutsu Kaisen">
+        <h3>Jujutsu Kaisen</h3>
+        <p>2020, Action</p>
+      </div>
+
+      <!-- card 12 -->
+      <div class="anime-card">
+        <img src="images/feacture/jujutsu kaisen anime.jpg" alt="Jujutsu Kaisen">
+        <h3>Jujutsu Kaisen</h3>
+        <p>2020, Action</p>
+      </div>
+
+
+
+
+
+
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Left side -->
+      <div class="footer-left">
+        <h3>NaniChan.com</h3>
+        <p><a href="#">Terms & Privacy</a> | <a href="#">Contact</a></p>
+      </div>
+
+      <!-- Right side -->
+      <div class="footer-right">
+        <a href="#"><img src="icons/telegram.svg" alt="Telegram"></a>
+        <a href="#"><img src="icons/discord.svg" alt="Discord"></a>
+        <a href="https://www.instagram.com/?hl=en"><img src="images/icons/insta.jpg" alt="Instagram"></a>
+        <a href="#"><img src="icons/youtube.svg" alt="YouTube"></a>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,247 @@
+/*
+|--------------------------------------------------
+| 🌸 CSS Variables & Global Resets
+|--------------------------------------------------
+*/
+:root {
+  /* Color Palette */
+  --clr-pink-light: #FFB6C1;
+  /* Light Pink Accent */
+  --clr-pink-accent: #e044a4;
+  /* Primary Pink/Magenta */
+  --clr-text-dark: #333333;
+  /* Dark text for high contrast */
+  --clr-form-bg: rgba(255, 255, 255, 0.85);
+  /* Semi-solid white for form background */
+  --clr-glass-border: rgba(255, 255, 255, 0.5);
+  /* Clear glass border */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 110vh;
+  /* Use your background image here */
+  background: url('right side ig.jpeg') no-repeat center center/cover;
+  display: flex;
+  /* Stack elements vertically (header is fixed, so this centers the box) */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* No blur on the body to let the form and header stand out */
+}
+
+/*
+|--------------------------------------------------
+| 🌸 Header & Navigation Styles (Glassmorphism)
+|--------------------------------------------------
+*/
+.anime-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  padding: 10px 0;
+
+  /* Glassmorphism Effect */
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--clr-glass-border);
+}
+
+.anime-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  /* Centers the nav content */
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  /* Adjusted size */
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  /* Use dark color for high contrast and readability */
+  color: var(--clr-text-dark);
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-links a:hover {
+  /* Use the bright pink accent on hover */
+  color: var(--clr-pink-accent);
+  text-shadow: 0 0 5px var(--clr-pink-accent);
+}
+
+/*
+|--------------------------------------------------
+| 🌸 Sign Up Box Styles (Improved Contrast)
+|--------------------------------------------------
+*/
+.login-box {
+  width: 90%;
+  max-width: 400px;
+  margin-top: 80px;
+  /* Push down to clear the fixed header */
+  padding: 40px 30px;
+
+  /* Glassmorphism with High Contrast */
+  background: var(--clr-form-bg);
+  background-color: rgb(255, 174, 201);
+  /* Semi-solid white background */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid var(--clr-glass-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.login-box h2 {
+  color: var(--clr-text-dark);
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.login-box p {
+  color: palevioletred;
+  /* Medium gray for secondary text */
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+/*
+|--------------------------------------------------
+| 🌸 Form & Input Styles
+|--------------------------------------------------
+*/
+.input-box {
+  margin-bottom: 18px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 14px;
+  /* Near-solid white for clear input background */
+  background: rgba(255, 255, 255, 0.95);
+  /* Dark text for typed content */
+  color: var(--clr-text-dark);
+
+  border: 1px solid var(--clr-pink-light);
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Improved placeholder readability */
+.input-box input::placeholder {
+  color: #a0a0a0;
+}
+
+.input-box input:focus {
+  border-color: var(--clr-pink-accent);
+  box-shadow: 0 0 0 2px rgba(224, 68, 164, 0.3);
+}
+
+/*
+|--------------------------------------------------
+| 🌸 Button & Links
+|--------------------------------------------------
+*/
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  /* Gradient from your original code */
+  background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--clr-text-dark);
+  /* Dark text on light button is better */
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.3);
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, #fa7d5b, #ff8b8f);
+  box-shadow: 0 6px 15px rgba(255, 105, 180, 0.5);
+}
+
+.options {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--clr-text-dark);
+}
+
+.options p {
+  /* Reset margin inherited from .login-box p */
+  margin-bottom: 0;
+}
+
+.options a {
+  color: var(--clr-pink-accent);
+  /* Use primary pink for link */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.options a:hover {
+  text-decoration: underline;
+  color: var(--clr-text-dark);
+}
+
+/*
+|--------------------------------------------------
+| 🌸 Responsive Layout
+|--------------------------------------------------
+*/
+@media (max-width: 480px) {
+  .login-box {
+    width: 85%;
+    padding: 30px 20px;
+  }
+
+  .anime-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+}
