@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: url('right side ig.jpeg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(6px);
+}
+
+
+
+/* --- Header Styles --- */
+
+.anime-header {
+  width: 100%;
+  /* Position fixed to stay at the top, or use relative/absolute */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  /* Ensure it's above other elements */
+  padding: 0px 0;
+
+  /* GLASSMORPHISM EFFECT */
+  background: rgba(255, 255, 255, 0.2);
+  /* Very light, slightly transparent background */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  /* The key for the 'frosted glass' effect */
+  -webkit-backdrop-filter: blur(10px);
+  /* For Safari support */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  /* Subtle white border */
+}
+
+/* --- Navigation Styles --- */
+
+.anime-nav {
+  max-width: 1200px;
+  /* Adjust as needed */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- Logo Styling --- */
+.anime-nav .logo {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e044a4;
+  text-decoration: none;
+  font-family: 'Baloo 2', cursive;
+  /* Logo font */
+  text-shadow: 0 0 5px rgba(255, 105, 180, 0.7);
+  /* Subtle pink/red shadow */
+  transition: transform 0.3s ease;
+  /* Smooth hover effect */
+  cursor: pointer;
+  /* Pointer cursor on hover */
+  letter-spacing: 1px;
+  /* Slight spacing between letters */
+  user-select: none;
+  /* Prevent text selection */
+  z-index: 1001;
+  /* Ensure it's above other elements */
+  background-image: ("logo.png");
+  padding: 5px 10px;
+  border-radius: 10px;
+  background: palevioletred;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+}
+
+
+.logo img {
+  height: 70px;
+  width: auto;
+  border-radius: 10px;
+  margin-left: 0%;
+  padding: 0%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.logo img:active {
+  transform: scale(0.9);
+  transition: transform 0.1s ease;
+}
+
+
+
+.logo a {
+  font-family: 'Baloo 2', cursive;
+  background-image: ("logo.png");
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #775555;
+  /* White text for visibility */
+  text-decoration: none;
+  /* You might want a subtle pink/red shadow */
+  text-shadow: 0 0 5px rgba(255, 105, 180, 0.7);
+}
+
+/* --- Navigation Links Styling --- */
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+.nav-links a {
+  color: #e044a4;
+  text-decoration: none;
+  font-size: 1.05rem;
+  padding: 5px 10px;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-links a:hover {
+  color: #FFB6C1;
+  /* Light pink on hover */
+  /* Add a subtle highlight */
+  text-shadow: 0 0 8px #FFB6C1;
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:active {
+  transform: scale(0.9);
+  transition: transform 0.1s ease;
+}
+
+.nav-links a:focus {
+  outline: 2px solid #FFB6C1;
+  outline-offset: 2px;
+}
+
+/* --- Search Button Styling --- */
+.btn-search {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  color: #fff;
+  background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.btn-search::placeholder {
+  color: #ffe4e1;
+  /* Light pink placeholder */
+}
+
+.btn-search:hover {
+  background: linear-gradient(90deg, #fa7d5b, #ff8b8f);
+  transform: scale(1.05);
+}
+
+.btn-search:active {
+  transform: scale(0.95);
+}
+
+.btn-search:focus {
+  outline: 2px solid #FFB6C1;
+  outline-offset: 2px;
+}
+
+
+.btn-learn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  color: #fff;
+  background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.btn-learn:hover {
+  background: linear-gradient(90deg, #fa7d5b, #ff8b8f);
+  transform: scale(1.05);
+}
+
+.btn-watch {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  color: #fff;
+  background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.btn-watch:hover {
+  background: linear-gradient(90deg, #fa7d5b, #ff8b8f);
+  transform: scale(1.05);
+}
+
+.btn-watch:active,
+.btn-learn:active {
+  transform: scale(0.95);
+}
+
+.btn-watch:focus,
+.btn-learn:focus {
+  outline: 2px solid #FFB6C1;
+  outline-offset: 2px;
+}
+
+
+
+
+
+/* --- Login Form Styles --- */
+.login-box {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 40px 30px;
+  width: 350px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #f56f6f;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+  /* Fade-in animation */
+  transition: box-shadow 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+.login-box h2 {
+  font-weight: 600;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.login-box p {
+  font-size: 14px;
+  margin-bottom: 25px;
+  color: palevioletred;
+}
+
+.input-box {
+  margin-bottom: 15px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #f34949;
+}
+
+.input-box input::placeholder {
+  color: #b36666;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(49, 48, 48);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #fa7d5b, #ff8b8f);
+}
+
+.options {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.options a {
+  color: #ff5656;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.options a:hover {
+  text-decoration: underline;
+}
+
+/* Animation when wrong */
+.shake {
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  75% {
+    transform: translateX(-5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-box {
+    width: 85%;
+    padding: 30px 25px;
+  }
+}
+
+.container {
+  width: 800px;
+  height: 800px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  display: flex;
+  overflow: hidden;
+}
