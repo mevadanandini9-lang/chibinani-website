@@ -358,14 +358,21 @@ body {
   }
 }
 
-/* Responsive */
 @media (max-width: 480px) {
   .login-box {
     width: 85%;
-    padding: 30px 25px;
+    padding: 30px 20px;
+  }
+
+  .anime-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links {
+    gap: 15px;
   }
 }
-
 .container {
   width: 800px;
   height: 800px;
@@ -375,4 +382,5 @@ body {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   display: flex;
   overflow: hidden;
+
 }
