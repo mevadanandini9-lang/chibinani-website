@@ -42,24 +42,25 @@ body {
 | 🌸 Header & Navigation Styles
 |--------------------------------------------------
 */
-.anime-header {
+*/ .anime-header {
   width: 100%;
   position: fixed;
   top: 0;
   z-index: 1000;
-  padding: 15px 0;
+  padding: 10px 0;
 
   /* Glassmorphism Effect */
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid var(--clr-glass-border);
 }
 
 .anime-nav {
   max-width: 1200px;
   margin: 0 auto;
+  /* Centers the nav content */
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
@@ -68,6 +69,7 @@ body {
 
 .logo img {
   height: 50px;
+  /* Adjusted size */
   border-radius: 8px;
   transition: transform 0.3s ease;
 }
@@ -83,6 +85,7 @@ body {
 }
 
 .nav-links a {
+  /* Use dark color for high contrast and readability */
   color: var(--clr-text-dark);
   text-decoration: none;
   font-size: 1.05rem;
@@ -92,6 +95,7 @@ body {
 }
 
 .nav-links a:hover {
+  /* Use the bright pink accent on hover */
   color: var(--clr-pink-accent);
   text-shadow: 0 0 5px var(--clr-pink-accent);
 }
